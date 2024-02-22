@@ -65,7 +65,8 @@
             this.load.image('turbo_nave', 'assets/turbo.png');
             this.load.image('plataforma_tijolo', 'assets/tijolos.png');
             this.load.image('moeda', 'assets/moeda.png');
-            this.load.image('sol', 'assets/sol.png')
+            this.load.image('planeta', 'assets/planeta.png');
+           
         }
 
         function create() {
@@ -83,6 +84,9 @@
    
             plataforma = this.physics.add.staticImage(larguraJogo/2, alturaJogo/2, 'plataforma_tijolo');
             this.physics.add.collider(alien, plataforma)
+
+            planeta = this.physics.add.staticImage(600, 140, 'planeta').setScale(0.1).refreshBody();
+            this.physics.add.collider(alien, planeta)
           
             moeda = this.physics.add.sprite(larguraJogo/4, 0, 'moeda');
             moeda.setCollideWorldBounds(true);
